@@ -12,10 +12,19 @@ protocol CarsListBuilderProtocol {
 }
 
 final class CarsListBuilder: CarsListBuilderProtocol {
+    private let service: CarSearchServiceProtocol
+
+    init(service: CarSearchServiceProtocol) {
+        self.service = service
+    }
+
     func build() -> UIViewController {
-        let presenter = CarsPresenter()
-        let interactor = MockCarsInteractor(presenter: presenter)
-        let viewController = CarsViewController(interactor: interactor)
+        let presenter = CarsListPresenter()
+        let interactor = CarsListInteractor(
+            presenter: presenter,
+            service: service
+        )
+        let viewController = CarsListViewController(interactor: interactor)
         presenter.viewController = viewController
         return viewController
     }

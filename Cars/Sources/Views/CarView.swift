@@ -10,17 +10,15 @@ import UIKit
 
 struct CarViewModel {
     let id: Int
-
     let title: String
     let imageUrl: URL?
     let isPremium: Bool
     let horsePowers: String
     let brand: String
-
     let price: String
     let engineVolume: String
     let mileage: String
-
+    let year: String
     let daysPosted: String
 }
 
@@ -49,7 +47,7 @@ class CarView: UIView {
         iconImageView.image = UIImage(named: "Icons/car")
         iconImageView.heightAnchor.constraint(equalToConstant: 12).isActive = true
         iconImageView.widthAnchor.constraint(equalToConstant: 12).isActive = true
-        iconImageView.tintColor = .purple
+        iconImageView.tintColor = .red
         return iconImageView
     }()
 

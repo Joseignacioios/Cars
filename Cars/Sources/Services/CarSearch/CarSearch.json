@@ -1,0 +1,87 @@
+{
+    "items":[
+    {
+    "type":"Brand",
+    "id":0,
+    "title":"BMW",
+    "country":"Germany",
+    "rating":"4.9/5.0",
+    "imageUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/600px-BMW_logo_%28gray%29.svg.png",
+    "year":"1916"
+    },
+    {
+    "type":"HighlightedCar",
+    "id":1,
+    "title":"BMW M8 Competition I",
+    "year":"2020",
+    "imageUrl":"https://f92.bimmerpost.com/forums/attachment.php?attachmentid=2233452&d=1580868735",
+    "horsePowers":"625 hp",
+    "brand":"BMW",
+    "price":"$210 000",
+    "engineVolume":"4.4 L",
+    "mileage":"12 000 km.",
+    "daysPosted":"4 days ago"
+    },
+    {
+    "type":"Car",
+    "id":2,
+    "title":"BMW 640i III",
+    "year":"2012",
+    "imageUrl":"https://s.auto.drom.ru/i24195/c/photos/fullsize/bmw/6-series/bmw_6-series_29076.jpg",
+    "horsePowers":"320 hp",
+    "brand":"BMW",
+    "price":"$28 000",
+    "engineVolume":"3.0 L",
+    "mileage":"94 000 km.",
+    "daysPosted":"2 days ago"
+    },
+    {
+    "type":"Brand",
+    "id":3,
+    "title":"Mercedes-Benz",
+    "country":"Germany",
+    "rating":"4.85/5.0",
+    "imageUrl":"https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Mercedes-Benz_Logo_2010.svg/2560px-Mercedes-Benz_Logo_2010.svg.png",
+    "year":"1926"
+    },
+    {
+    "type":"Car",
+    "id":4,
+    "title":"G-Класс AMG 63 AMG II (W463)",
+    "year":"2021",
+    "imageUrl":"https://avatars.mds.yandex.net/get-autoru-vos/2079505/da60bcd14a7c80963f6ffd8507e567ac/456x342",
+    "horsePowers":"585 hp",
+    "brand":"Mercedes-Benz",
+    "price":"$290 000",
+    "engineVolume":"4.0 L",
+    "mileage":"1 000 km.",
+    "daysPosted":"4 days ago"
+    },
+    {
+    "type":"Car",
+    "id":5,
+    "title":"CLS AMG 53 AMG III (C257)",
+    "year":"2018",
+    "imageUrl":"https://www.allcarz.ru/wp-content/uploads/2018/01/foto-cls-53_09.jpg",
+    "horsePowers":"435 hp",
+    "brand":"Mercedes-Benz",
+    "price":"$90 000",
+    "engineVolume":"3.0 l",
+    "mileage":"22 000 km.",
+    "daysPosted":"9 days ago"
+    },
+    {
+    "type":"Car",
+    "id":6,
+    "title":"E-Класс 250 5G-Tronic IV (W212, S212, C207)",
+    "year":"2009",
+    "imageUrl":"https://www.allcarz.ru/wp-content/uploads/2012/12/foto-mercedes-e-w212_07-650x487.jpg",
+    "horsePowers":"204 hp",
+    "brand":"Mercedes-Benz",
+    "price":"$15 000",
+    "engineVolume":"2.1 L",
+    "mileage":"145000 km.",
+    "daysPosted":"11 days ago"
+    }
+    ]
+}

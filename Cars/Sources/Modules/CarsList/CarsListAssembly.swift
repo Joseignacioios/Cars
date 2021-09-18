@@ -9,8 +9,10 @@ import Swinject
 
 final class CarsListAssembly: Assembly {
     func assemble(container: Container) {
-        container.register(CarsListBuilderProtocol.self) { _ in
-            CarsListBuilder()
+        container.register(CarsListBuilderProtocol.self) { resolver in
+            CarsListBuilder(service: resolver.resolve(CarSearchServiceProtocol.self)!)
         }
+        
     }
 }
+

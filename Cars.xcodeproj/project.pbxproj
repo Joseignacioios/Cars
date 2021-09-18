@@ -27,6 +27,13 @@
 		C2641AFD26F623780097103A /* CarsListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2641AFC26F623780097103A /* CarsListBuilder.swift */; };
 		C2641AFF26F6239A0097103A /* CarsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2641AFE26F6239A0097103A /* CarsListInteractor.swift */; };
 		C2641B0126F623B40097103A /* CarsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2641B0026F623B40097103A /* CarsListPresenter.swift */; };
+		C2B0F8D126F6403D009453FD /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B0F8D026F6403D009453FD /* URL+Extension.swift */; };
+		C2B0F8D426F6407C009453FD /* CarSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B0F8D326F6407C009453FD /* CarSearchService.swift */; };
+		C2B0F8D726F6423E009453FD /* CarSearchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B0F8D626F6423E009453FD /* CarSearchModels.swift */; };
+		C2B0F8D926F65A9C009453FD /* CarSearchAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B0F8D826F65A9C009453FD /* CarSearchAssembly.swift */; };
+		C2B0F8DB26F65ADE009453FD /* CarSearch.json in Sources */ = {isa = PBXBuildFile; fileRef = C2B0F8DA26F65ADE009453FD /* CarSearch.json */; };
+		C2B0F8DD26F66DD0009453FD /* CarsListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B0F8DC26F66DD0009453FD /* CarsListModels.swift */; };
+		C2B0F8DE26F67DBB009453FD /* CarSearch.json in Resources */ = {isa = PBXBuildFile; fileRef = C2B0F8DA26F65ADE009453FD /* CarSearch.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +68,12 @@
 		C2641AFC26F623780097103A /* CarsListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListBuilder.swift; sourceTree = "<group>"; };
 		C2641AFE26F6239A0097103A /* CarsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListInteractor.swift; sourceTree = "<group>"; };
 		C2641B0026F623B40097103A /* CarsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListPresenter.swift; sourceTree = "<group>"; };
+		C2B0F8D026F6403D009453FD /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		C2B0F8D326F6407C009453FD /* CarSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSearchService.swift; sourceTree = "<group>"; };
+		C2B0F8D626F6423E009453FD /* CarSearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSearchModels.swift; sourceTree = "<group>"; };
+		C2B0F8D826F65A9C009453FD /* CarSearchAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSearchAssembly.swift; sourceTree = "<group>"; };
+		C2B0F8DA26F65ADE009453FD /* CarSearch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CarSearch.json; sourceTree = "<group>"; };
+		C2B0F8DC26F66DD0009453FD /* CarsListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +132,7 @@
 				C2641AE426F339410097103A /* Views */,
 				8D3BC304263E69BF00691327 /* DesignSystem */,
 				8D320F03263E63A000B0E0E9 /* Modules */,
+				C2B0F8D226F64068009453FD /* Services */,
 				C2641AED26F33EDF0097103A /* Utils */,
 			);
 			path = Sources;
@@ -135,11 +149,12 @@
 		8D3BC2FF263E65D500691327 /* CarsList */ = {
 			isa = PBXGroup;
 			children = (
-				8D3BC300263E662B00691327 /* CarsListViewController.swift */,
+				C2B0F8DC26F66DD0009453FD /* CarsListModels.swift */,
 				C2641AFA26F6226F0097103A /* CarsListAssembly.swift */,
 				C2641AFC26F623780097103A /* CarsListBuilder.swift */,
 				C2641AFE26F6239A0097103A /* CarsListInteractor.swift */,
 				C2641B0026F623B40097103A /* CarsListPresenter.swift */,
+				8D3BC300263E662B00691327 /* CarsListViewController.swift */,
 			);
 			path = CarsList;
 			sourceTree = "<group>";
@@ -194,8 +209,28 @@
 			isa = PBXGroup;
 			children = (
 				C2641AEE26F33F080097103A /* Array+Extension.swift */,
+				C2B0F8D026F6403D009453FD /* URL+Extension.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		C2B0F8D226F64068009453FD /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C2B0F8D526F6422D009453FD /* CarSearch */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C2B0F8D526F6422D009453FD /* CarSearch */ = {
+			isa = PBXGroup;
+			children = (
+				C2B0F8D326F6407C009453FD /* CarSearchService.swift */,
+				C2B0F8D626F6423E009453FD /* CarSearchModels.swift */,
+				C2B0F8D826F65A9C009453FD /* CarSearchAssembly.swift */,
+				C2B0F8DA26F65ADE009453FD /* CarSearch.json */,
+			);
+			path = CarSearch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2B0F8DE26F67DBB009453FD /* CarSearch.json in Resources */,
 				8D320EF7263E631F00B0E0E9 /* LaunchScreen.storyboard in Resources */,
 				8D320EF4263E631F00B0E0E9 /* Assets.xcassets in Resources */,
 			);
@@ -306,19 +342,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2B0F8DD26F66DD0009453FD /* CarsListModels.swift in Sources */,
 				C2641AFF26F6239A0097103A /* CarsListInteractor.swift in Sources */,
 				C2641AEA26F33E590097103A /* DesignText.swift in Sources */,
 				8D3BC30A263E6AD000691327 /* UIKit+DesignColor.swift in Sources */,
 				8D3BC307263E69DC00691327 /* DesignColor.swift in Sources */,
 				C2641AF126F33F290097103A /* CarView.swift in Sources */,
 				C2641AFD26F623780097103A /* CarsListBuilder.swift in Sources */,
+				C2B0F8DB26F65ADE009453FD /* CarSearch.json in Sources */,
 				8D320EEB263E631F00B0E0E9 /* AppDelegate.swift in Sources */,
 				8D3BC301263E662B00691327 /* CarsListViewController.swift in Sources */,
+				C2B0F8D926F65A9C009453FD /* CarSearchAssembly.swift in Sources */,
+				C2B0F8D126F6403D009453FD /* URL+Extension.swift in Sources */,
+				C2B0F8D726F6423E009453FD /* CarSearchModels.swift in Sources */,
 				C2641AF326F3431E0097103A /* BrandView.swift in Sources */,
 				C2641B0126F623B40097103A /* CarsListPresenter.swift in Sources */,
 				C2641AEC26F33E880097103A /* UIKit+DesignText.swift in Sources */,
 				C2641AFB26F6226F0097103A /* CarsListAssembly.swift in Sources */,
 				C2641AE626F339530097103A /* CollectionCell.swift in Sources */,
+				C2B0F8D426F6407C009453FD /* CarSearchService.swift in Sources */,
 				C2641AEF26F33F080097103A /* Array+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

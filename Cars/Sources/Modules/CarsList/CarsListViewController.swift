@@ -1,5 +1,5 @@
 //
-//  CarsViewController.swift
+//  CarsListViewController.swift
 //  Cars
 //
 //  Created by Joce on 14.09.2021.
@@ -7,18 +7,23 @@
 
 import UIKit
 
-protocol CarsViewControllerProtocol: AnyObject {}
+protocol CarsListViewControllerProtocol: AnyObject {
+    func show(viewModel: CarsList.ViewModel)
+}
 
-final class CarsViewController: UIViewController {
+final class CarsListViewController: UIViewController {
+    private typealias CarCell = CollectionCell<CarView>
+    private typealias BrandCell = CollectionCell<BrandView>
+    private typealias ViewModel = CarsList.ViewModel
+
     private var flowLayout: UICollectionViewFlowLayout!
     private var collectionView: UICollectionView!
 
-    private typealias CarCell = CollectionCell<CarView>
-    private typealias BrandCell = CollectionCell<BrandView>
+    private let interactor: CarsListInteractorProtocol
+    
+    private var cells = [ViewModel.Cell]()
 
-    private let interactor: CarsInteractorProtocol
-
-    init(interactor: CarsInteractorProtocol) {
+    init(interactor: CarsListInteractorProtocol) {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
     }
@@ -35,7 +40,7 @@ final class CarsViewController: UIViewController {
     }
 
     private func setup() {
-        title = "Купить авто"
+        title = "Buy auto"
         view.backgroundColor = .design(.background(style: .primary))
         flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumLineSpacing = 20
@@ -61,67 +66,51 @@ final class CarsViewController: UIViewController {
     }
 }
 
-extension CarsViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension CarsListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.row % 3 == 0 {
-            return CGSize(
-                width: collectionView.bounds.inset(by: collectionView.layoutMargins).size.width,
-                height: 180
-            )
-        } else {
-            return CGSize(
-                width: collectionView.bounds.inset(by: collectionView.layoutMargins).size.width,
-                height: 280
-            )
-        }
+        CGSize(
+            width: collectionView.bounds.inset(by: collectionView.layoutMargins).size.width,
+            height: cells[indexPath.row].cellHeight
+        )
+
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        cells.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let viewModel = cells[indexPath.row]
         let cell: UICollectionViewCell
 
-        if indexPath.row % 3 == 0 {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BrandCell", for: indexPath)
-        } else {
+        switch viewModel {
+        case let .car(viewModel):
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarCell", for: indexPath)
+            (cell as? CarCell)?.view.configure(viewModel: viewModel)
+        case let .brand(viewModel):
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BrandCell", for: indexPath)
+            (cell as? BrandCell)?.view.configure(viewModel: viewModel)
         }
-
-        switch cell {
-        case let propertyCell as CarCell:
-            propertyCell.view.configure(
-                viewModel: CarViewModel(
-                    id: 1,
-                    title: "BMW M8",
-                    imageUrl: URL(string: "https://cdn.bmwblog.com/wp-content/uploads/2020/02/Nardo-Grey-BMW-M8-04.jpg"),
-                    isPremium: indexPath.row % 2 == 0,
-                    horsePowers: "625 л.с.",
-                    brand: "BMW",
-                    price: "16 150 000 ₽",
-                    engineVolume: "4.4 л",
-                    mileage: "12 000 км",
-                    daysPosted: "3 дня назад"
-                )
-            )
-        case let brandCell as BrandCell:
-            brandCell.view.configure(
-                viewModel: BrandViewModel(
-                    id: 1,
-                    title: "BMW",
-                    country: "Германия",
-                    rating: "Рейтинг: 4.7/5",
-                    imageUrl: URL(string: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/BMW_logo_%28gray%29.svg/600px-BMW_logo_%28gray%29.svg.png"),
-                    year: "1916 г."
-                )
-            )
-        default:
-            fatalError("Unexpected cell type")
-        }
-
         return cell
     }
 }
 
-extension CarsViewController: CarsViewControllerProtocol {}
+
+
+extension CarsListViewController: CarsListViewControllerProtocol {
+    func show(viewModel: CarsList.ViewModel) {
+        cells = viewModel.cells
+        collectionView.reloadData()
+    }
+}
+
+private extension CarsList.ViewModel.Cell {
+    var cellHeight: CGFloat {
+        switch self {
+        case .car:
+            return 280
+        case .brand:
+            return 180
+        }
+    }
+}

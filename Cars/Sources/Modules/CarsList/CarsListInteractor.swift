@@ -1,23 +1,37 @@
 //
-//  CarsInteractor.swift
+//  CarsListInteractor.swift
 //  Cars
 //
 //  Created by Joce on 18.09.2021.
 //
 
-protocol CarsInteractorProtocol {
+protocol CarsListInteractorProtocol {
     func loadData()
-    func didSelect(property id: Int)
+    func didSelect(car request: CarsList.Request)
 }
 
-final class MockCarsInteractor: CarsInteractorProtocol {
-    private let presenter: CarsPresenterProtocol
+final class CarsListInteractor: CarsListInteractorProtocol {
+    private let presenter: CarsListPresenterProtocol
+    private let service: CarSearchServiceProtocol
 
-    init(presenter: CarsPresenterProtocol) {
+    init(presenter: CarsListPresenterProtocol, service: CarSearchServiceProtocol) {
         self.presenter = presenter
+        self.service = service
     }
 
-    func loadData() {}
-
-    func didSelect(property id: Int) {}
+    func loadData() {
+        service.fetch(request: CarSearch.Request()) { [weak self] result in
+            switch result {
+            case let .success(response):
+                self?.presenter.present(data: response)
+            case let .failure(error):
+                ()
+            }
+            print(result)
+        }
+    }
+    
+    func didSelect(car request: CarsList.Request) {
+        
+    }
 }
