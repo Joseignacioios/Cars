@@ -7,7 +7,8 @@
 
 protocol CarsListInteractorProtocol {
     func loadData()
-    func didSelect(car request: CarsList.Request)
+    func request(request: CarsList.Request)
+
 }
 
 final class CarsListInteractor: CarsListInteractorProtocol {
@@ -25,13 +26,17 @@ final class CarsListInteractor: CarsListInteractorProtocol {
             case let .success(response):
                 self?.presenter.present(data: response)
             case let .failure(error):
-                ()
+                self?.presenter.present(error: error)
+
             }
             print(result)
         }
     }
     
-    func didSelect(car request: CarsList.Request) {
-        
-    }
+    func request(request: CarsList.Request) {
+        switch request {
+        case let .car(id): ()
+        case .reload:
+            loadData()
+        }
 }

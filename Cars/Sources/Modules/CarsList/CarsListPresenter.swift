@@ -9,11 +9,13 @@ import Foundation
 
 protocol CarsListPresenterProtocol {
     func present(data: CarsList.Data)
+    func present(error: Error)
 }
 
 final class CarsListPresenter: CarsListPresenterProtocol {
     typealias Data = CarsList.Data
     typealias CellViewModel = CarsList.ViewModel.Cell
+    typealias AlertViewModel = PropertyList.ViewModel.Alert
 
     weak var viewController: CarsListViewControllerProtocol?
     
@@ -57,9 +59,21 @@ final class CarsListPresenter: CarsListPresenterProtocol {
 
     func present(data: CarsList.Data) {
         let cellViewModels = data.items.map(toViewModel)
-        let viewModel = CarsList.ViewModel(cells: cellViewModels)
+        let viewModel = CarsList.ViewModel.data(cells: cellViewModels)
         DispatchQueue.main.async {
             self.viewController?.show(viewModel: viewModel)
+        }
+    }
+    
+    func present(error: Error) {
+        let viewModel = AlertViewModel(
+            title: "Something went wrong",
+            message: error.localizedDescription,
+            retry: "Retry",
+            cancel: "Cancel"
+        )
+        DispatchQueue.main.async {
+            self.viewController?.show(viewModel: .failure(alert: viewModel))
         }
     }
 }

@@ -18,6 +18,7 @@ final class CarsListViewController: UIViewController {
 
     private var flowLayout: UICollectionViewFlowLayout!
     private var collectionView: UICollectionView!
+    private let refreshControl = UIRefreshControl()
 
     private let interactor: CarsListInteractorProtocol
     
@@ -63,6 +64,27 @@ final class CarsListViewController: UIViewController {
 
         collectionView.register(CarCell.self, forCellWithReuseIdentifier: "CarCell")
         collectionView.register(BrandCell.self, forCellWithReuseIdentifier: "BrandCell")
+        
+        refreshControl.addTarget(self, action: #selector(didPull), for: .valueChanged)
+        collectionView.addSubview(refreshControl)
+    }
+
+    private func showAlert(viewModel: ViewModel.Alert) {
+        let alert = UIAlertController(
+            title: viewModel.title,
+            message: viewModel.message,
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: viewModel.retry, style: .default, handler: { _ in
+            self.interactor.request(request: .reload)
+        }))
+        alert.addAction(UIAlertAction(title: viewModel.cancel, style: .cancel, handler: nil))
+        present(alert, animated: true)
+    }
+
+    @objc private func didPull() {
+        refreshControl.endRefreshing()
+        interactor.request(request: .reload)
     }
 }
 
@@ -99,8 +121,13 @@ extension CarsListViewController: UICollectionViewDataSource, UICollectionViewDe
 
 extension CarsListViewController: CarsListViewControllerProtocol {
     func show(viewModel: CarsList.ViewModel) {
-        cells = viewModel.cells
-        collectionView.reloadData()
+        switch viewModel {
+        case let .data(cells):
+            self.cells = cells
+            collectionView.reloadData()
+        case let .failure(alert):
+            showAlert(viewModel: alert)
+        }
     }
 }
 
