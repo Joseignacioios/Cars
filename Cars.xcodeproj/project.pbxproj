@@ -29,6 +29,15 @@
 		C2641B0126F623B40097103A /* CarsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2641B0026F623B40097103A /* CarsListPresenter.swift */; };
 		C28E3E0D26F7400300B39C77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C28E3E0C26F7400300B39C77 /* Localizable.strings */; };
 		C28E3E0F26F7425300B39C77 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = C28E3E0E26F7425300B39C77 /* Localizable.stringsdict */; };
+		C28E3E1226F75C3800B39C77 /* CarMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E3E1126F75C3800B39C77 /* CarMapper.swift */; };
+		C28E3E1426F75E4E00B39C77 /* CarMapperAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E3E1326F75E4E00B39C77 /* CarMapperAssembly.swift */; };
+		C28E3E1726F75EDE00B39C77 /* CarDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E3E1626F75EDE00B39C77 /* CarDetailAssembly.swift */; };
+		C28E3E1926F75F2C00B39C77 /* CarDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E3E1826F75F2C00B39C77 /* CarDetailBuilder.swift */; };
+		C28E3E1B26F75F6B00B39C77 /* CarDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E3E1A26F75F6B00B39C77 /* CarDetailInteractor.swift */; };
+		C28E3E1D26F75F8C00B39C77 /* CarDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E3E1C26F75F8C00B39C77 /* CarDetailModels.swift */; };
+		C28E3E1F26F75FAD00B39C77 /* CarDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E3E1E26F75FAD00B39C77 /* CarDetailPresenter.swift */; };
+		C28E3E2126F75FC700B39C77 /* CarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E3E2026F75FC600B39C77 /* CarDetailViewController.swift */; };
+		C28E3E2326F75FF900B39C77 /* CarsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28E3E2226F75FF900B39C77 /* CarsListRouter.swift */; };
 		C2B0F8D126F6403D009453FD /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B0F8D026F6403D009453FD /* URL+Extension.swift */; };
 		C2B0F8D426F6407C009453FD /* CarSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B0F8D326F6407C009453FD /* CarSearchService.swift */; };
 		C2B0F8D726F6423E009453FD /* CarSearchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B0F8D626F6423E009453FD /* CarSearchModels.swift */; };
@@ -72,6 +81,15 @@
 		C2641B0026F623B40097103A /* CarsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListPresenter.swift; sourceTree = "<group>"; };
 		C28E3E0C26F7400300B39C77 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		C28E3E0E26F7425300B39C77 /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
+		C28E3E1126F75C3800B39C77 /* CarMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMapper.swift; sourceTree = "<group>"; };
+		C28E3E1326F75E4E00B39C77 /* CarMapperAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMapperAssembly.swift; sourceTree = "<group>"; };
+		C28E3E1626F75EDE00B39C77 /* CarDetailAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailAssembly.swift; sourceTree = "<group>"; };
+		C28E3E1826F75F2C00B39C77 /* CarDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailBuilder.swift; sourceTree = "<group>"; };
+		C28E3E1A26F75F6B00B39C77 /* CarDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailInteractor.swift; sourceTree = "<group>"; };
+		C28E3E1C26F75F8C00B39C77 /* CarDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailModels.swift; sourceTree = "<group>"; };
+		C28E3E1E26F75FAD00B39C77 /* CarDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailPresenter.swift; sourceTree = "<group>"; };
+		C28E3E2026F75FC600B39C77 /* CarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetailViewController.swift; sourceTree = "<group>"; };
+		C28E3E2226F75FF900B39C77 /* CarsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListRouter.swift; sourceTree = "<group>"; };
 		C2B0F8D026F6403D009453FD /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		C2B0F8D326F6407C009453FD /* CarSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSearchService.swift; sourceTree = "<group>"; };
 		C2B0F8D626F6423E009453FD /* CarSearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSearchModels.swift; sourceTree = "<group>"; };
@@ -135,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				8D320EEA263E631F00B0E0E9 /* AppDelegate.swift */,
+				C28E3E1026F75C2600B39C77 /* Mappers */,
 				C2641AE426F339410097103A /* Views */,
 				8D3BC304263E69BF00691327 /* DesignSystem */,
 				8D320F03263E63A000B0E0E9 /* Modules */,
@@ -147,6 +166,7 @@
 		8D320F03263E63A000B0E0E9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				C28E3E1526F75E7300B39C77 /* CarDetail */,
 				8D3BC2FF263E65D500691327 /* CarsList */,
 			);
 			path = Modules;
@@ -161,6 +181,7 @@
 				C2641AFE26F6239A0097103A /* CarsListInteractor.swift */,
 				C2641B0026F623B40097103A /* CarsListPresenter.swift */,
 				8D3BC300263E662B00691327 /* CarsListViewController.swift */,
+				C28E3E2226F75FF900B39C77 /* CarsListRouter.swift */,
 			);
 			path = CarsList;
 			sourceTree = "<group>";
@@ -218,6 +239,28 @@
 				C2B0F8D026F6403D009453FD /* URL+Extension.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		C28E3E1026F75C2600B39C77 /* Mappers */ = {
+			isa = PBXGroup;
+			children = (
+				C28E3E1126F75C3800B39C77 /* CarMapper.swift */,
+				C28E3E1326F75E4E00B39C77 /* CarMapperAssembly.swift */,
+			);
+			path = Mappers;
+			sourceTree = "<group>";
+		};
+		C28E3E1526F75E7300B39C77 /* CarDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C28E3E1626F75EDE00B39C77 /* CarDetailAssembly.swift */,
+				C28E3E1826F75F2C00B39C77 /* CarDetailBuilder.swift */,
+				C28E3E1A26F75F6B00B39C77 /* CarDetailInteractor.swift */,
+				C28E3E1C26F75F8C00B39C77 /* CarDetailModels.swift */,
+				C28E3E1E26F75FAD00B39C77 /* CarDetailPresenter.swift */,
+				C28E3E2026F75FC600B39C77 /* CarDetailViewController.swift */,
+			);
+			path = CarDetail;
 			sourceTree = "<group>";
 		};
 		C2B0F8D226F64068009453FD /* Services */ = {
@@ -360,10 +403,19 @@
 				C2B0F8DB26F65ADE009453FD /* CarSearch.json in Sources */,
 				8D320EEB263E631F00B0E0E9 /* AppDelegate.swift in Sources */,
 				8D3BC301263E662B00691327 /* CarsListViewController.swift in Sources */,
+				C28E3E1F26F75FAD00B39C77 /* CarDetailPresenter.swift in Sources */,
+				C28E3E2326F75FF900B39C77 /* CarsListRouter.swift in Sources */,
 				C2B0F8D926F65A9C009453FD /* CarSearchAssembly.swift in Sources */,
+				C28E3E2126F75FC700B39C77 /* CarDetailViewController.swift in Sources */,
+				C28E3E1426F75E4E00B39C77 /* CarMapperAssembly.swift in Sources */,
 				C2B0F8D126F6403D009453FD /* URL+Extension.swift in Sources */,
+				C28E3E1726F75EDE00B39C77 /* CarDetailAssembly.swift in Sources */,
 				C2B0F8D726F6423E009453FD /* CarSearchModels.swift in Sources */,
 				C2641AF326F3431E0097103A /* BrandView.swift in Sources */,
+				C28E3E1B26F75F6B00B39C77 /* CarDetailInteractor.swift in Sources */,
+				C28E3E1D26F75F8C00B39C77 /* CarDetailModels.swift in Sources */,
+				C28E3E1226F75C3800B39C77 /* CarMapper.swift in Sources */,
+				C28E3E1926F75F2C00B39C77 /* CarDetailBuilder.swift in Sources */,
 				C2641B0126F623B40097103A /* CarsListPresenter.swift in Sources */,
 				C2641AEC26F33E880097103A /* UIKit+DesignText.swift in Sources */,
 				C2641AFB26F6226F0097103A /* CarsListAssembly.swift in Sources */,

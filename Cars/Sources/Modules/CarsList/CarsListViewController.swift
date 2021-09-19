@@ -9,6 +9,7 @@ import UIKit
 
 protocol CarsListViewControllerProtocol: AnyObject {
     func show(viewModel: CarsList.ViewModel)
+    func show(isLoading: Bool)
 }
 
 final class CarsListViewController: UIViewController {
@@ -18,7 +19,8 @@ final class CarsListViewController: UIViewController {
 
     private var flowLayout: UICollectionViewFlowLayout!
     private var collectionView: UICollectionView!
-    private let refreshControl = UIRefreshControl()
+    private var refreshControl: UIRefreshControl!
+    private var activityIndicator: UIActivityIndicatorView!
 
     private let interactor: CarsListInteractorProtocol
     
@@ -64,9 +66,17 @@ final class CarsListViewController: UIViewController {
 
         collectionView.register(CarCell.self, forCellWithReuseIdentifier: "CarCell")
         collectionView.register(BrandCell.self, forCellWithReuseIdentifier: "BrandCell")
-        
+        refreshControl = UIRefreshControl()
+
         refreshControl.addTarget(self, action: #selector(didPull), for: .valueChanged)
         collectionView.addSubview(refreshControl)
+        
+        activityIndicator = UIActivityIndicatorView(frame: view.bounds)
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        activityIndicator.isUserInteractionEnabled = false
+        view.addSubview(activityIndicator)
+
     }
 
     private func showAlert(viewModel: ViewModel.Alert) {
@@ -115,9 +125,15 @@ extension CarsListViewController: UICollectionViewDataSource, UICollectionViewDe
         }
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch cells[indexPath.row] {
+        case let .car(viewModel):
+            interactor.request(request: .car(id: viewModel.id))
+        case .brand: break
+        }
+    }
 }
-
-
 
 extension CarsListViewController: CarsListViewControllerProtocol {
     func show(viewModel: CarsList.ViewModel) {
@@ -127,6 +143,14 @@ extension CarsListViewController: CarsListViewControllerProtocol {
             collectionView.reloadData()
         case let .failure(alert):
             showAlert(viewModel: alert)
+        }
+    }
+    
+    func show(isLoading: Bool) {
+        if isLoading {
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.stopAnimating()
         }
     }
 }

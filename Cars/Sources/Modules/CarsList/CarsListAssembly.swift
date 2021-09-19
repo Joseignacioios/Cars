@@ -10,7 +10,12 @@ import Swinject
 final class CarsListAssembly: Assembly {
     func assemble(container: Container) {
         container.register(CarsListBuilderProtocol.self) { resolver in
-            CarsListBuilder(service: resolver.resolve(CarSearchServiceProtocol.self)!)
+            CarsListBuilder(
+                service: resolver.resolve(CarSearchServiceProtocol.self)!,
+                mapper: resolver.resolve(CarMapperProtocol.self)!,
+                carDetailsBuilder: resolver.resolve(CarDetailBuilderProtocol.self)!
+
+            )
         }
         
     }

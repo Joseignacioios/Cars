@@ -90,15 +90,15 @@ class CarView: UIView {
 
     private func setup() {
         backgroundColor = .design(.background(style: .primary))
-        let areaStackView = UIStackView(arrangedSubviews: [iconImageView, brandLabel])
-        areaStackView.spacing = .horizontalStackSpacing
-        areaStackView.axis = .horizontal
+        let brandStackView = UIStackView(arrangedSubviews: [iconImageView, brandLabel])
+        brandStackView.spacing = .horizontalStackSpacing
+        brandStackView.axis = .horizontal
 
         let detailsStackView = UIStackView(arrangedSubviews: [detailsLabel, timeLabel])
         detailsStackView.spacing = .horizontalStackSpacing
         detailsStackView.axis = .horizontal
 
-        let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, areaStackView, detailsStackView])
+        let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, brandStackView, detailsStackView])
         stackView.axis = .vertical
         stackView.frame = bounds
         stackView.spacing = .verticalStackSpacing

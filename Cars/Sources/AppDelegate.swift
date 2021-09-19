@@ -13,6 +13,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     private let assembler = Assembler([
         CarSearchAssembly(),
+        CarDetailAssembly(),
+        CarMapperAssembly(),
         CarsListAssembly()
     ])
     
