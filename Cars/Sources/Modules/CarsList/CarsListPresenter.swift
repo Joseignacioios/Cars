@@ -15,22 +15,46 @@ protocol CarsListPresenterProtocol {
 final class CarsListPresenter: CarsListPresenterProtocol {
     typealias Data = CarsList.Data
     typealias CellViewModel = CarsList.ViewModel.Cell
-    typealias AlertViewModel = PropertyList.ViewModel.Alert
+    typealias AlertViewModel = CarsList.ViewModel.Alert
+    
+    private let numberFormatter: NumberFormatter = {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.minimumFractionDigits = 0
+        numberFormatter.maximumFractionDigits = 2
+        return numberFormatter
+    }()
+
+    private let measurementFormatter: MeasurementFormatter = {
+        let measurementFormatter = MeasurementFormatter()
+
+        return measurementFormatter
+    }()
 
     weak var viewController: CarsListViewControllerProtocol?
+    
+    private func pretify(days: Int) -> String {
+        let formatString: String = NSLocalizedString("REMAINING_DAY_PATTERN", comment: "")
+        let resultString = String.localizedStringWithFormat(formatString, days)
+        return resultString
+    }
+
+    private func pretify(double: Double) -> String {
+        let number = NSNumber(value: double)
+        return numberFormatter.string(from: number) ?? "\(double)"
+    }
     
     private func toViewModle(car: Data.Car, isHighlighted: Bool) -> CarViewModel {
         CarViewModel(id: car.id,
                      title: car.title,
                      imageUrl: URL(string: car.imageUrl ?? ""),
                      isPremium: isHighlighted,
-                     horsePowers: car.horsePowers,
+                     horsePowers: String(format: NSLocalizedString("CAR_LIST_HORSEPOWERS", comment: ""), "\(car.horsePowers)"),
                      brand: car.brand,
-                     price: car.price,
-                     engineVolume: car.engineVolume,
-                     mileage: car.mileage,
+                     price: String(format: NSLocalizedString("CAR_LIST_PRICE", comment: ""), "\(car.price)"),
+                     engineVolume: String(format: NSLocalizedString("CAR_LIST_ENGINEVOLUME", comment: ""), "\(pretify(double:car.engineVolume))"),
+                     mileage: String(format: NSLocalizedString("CAR_LIST_MILEAGE", comment: ""), "\(car.mileage)"),
                      year: car.year,
-                     daysPosted: car.daysPosted
+                     daysPosted: pretify(days: car.daysPosted)
         )
     }
 

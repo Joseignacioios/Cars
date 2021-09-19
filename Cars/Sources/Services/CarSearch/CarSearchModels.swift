@@ -25,12 +25,12 @@ extension CarSearch.Response {
         let title: String
         let year: String
         let imageUrl: String?
-        let horsePowers: String
+        let horsePowers: Int
         let brand: String
-        let price: String
-        let engineVolume: String
-        let mileage: String
-        let daysPosted: String
+        let price: Int
+        let engineVolume: Double
+        let mileage: Int
+        let daysPosted: Int
     }
 
     struct Brand {

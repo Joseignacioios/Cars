@@ -41,7 +41,7 @@ final class CarsListViewController: UIViewController {
     }
 
     private func setup() {
-        title = "Buy auto"
+        title = String(format: NSLocalizedString("CAR_LIST_TITLE", comment: ""))
         view.backgroundColor = .design(.background(style: .primary))
         flowLayout = UICollectionViewFlowLayout()
         flowLayout.minimumLineSpacing = 20

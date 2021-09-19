@@ -8,18 +8,18 @@
 protocol CarsListInteractorProtocol {
     func loadData()
     func request(request: CarsList.Request)
-
+    
 }
 
 final class CarsListInteractor: CarsListInteractorProtocol {
     private let presenter: CarsListPresenterProtocol
     private let service: CarSearchServiceProtocol
-
+    
     init(presenter: CarsListPresenterProtocol, service: CarSearchServiceProtocol) {
         self.presenter = presenter
         self.service = service
     }
-
+    
     func loadData() {
         service.fetch(request: CarSearch.Request()) { [weak self] result in
             switch result {
@@ -27,7 +27,7 @@ final class CarsListInteractor: CarsListInteractorProtocol {
                 self?.presenter.present(data: response)
             case let .failure(error):
                 self?.presenter.present(error: error)
-
+                
             }
             print(result)
         }
@@ -39,4 +39,5 @@ final class CarsListInteractor: CarsListInteractorProtocol {
         case .reload:
             loadData()
         }
+    }
 }

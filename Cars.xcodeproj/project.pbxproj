@@ -27,6 +27,8 @@
 		C2641AFD26F623780097103A /* CarsListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2641AFC26F623780097103A /* CarsListBuilder.swift */; };
 		C2641AFF26F6239A0097103A /* CarsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2641AFE26F6239A0097103A /* CarsListInteractor.swift */; };
 		C2641B0126F623B40097103A /* CarsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2641B0026F623B40097103A /* CarsListPresenter.swift */; };
+		C28E3E0D26F7400300B39C77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C28E3E0C26F7400300B39C77 /* Localizable.strings */; };
+		C28E3E0F26F7425300B39C77 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = C28E3E0E26F7425300B39C77 /* Localizable.stringsdict */; };
 		C2B0F8D126F6403D009453FD /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B0F8D026F6403D009453FD /* URL+Extension.swift */; };
 		C2B0F8D426F6407C009453FD /* CarSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B0F8D326F6407C009453FD /* CarSearchService.swift */; };
 		C2B0F8D726F6423E009453FD /* CarSearchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B0F8D626F6423E009453FD /* CarSearchModels.swift */; };
@@ -68,6 +70,8 @@
 		C2641AFC26F623780097103A /* CarsListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListBuilder.swift; sourceTree = "<group>"; };
 		C2641AFE26F6239A0097103A /* CarsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListInteractor.swift; sourceTree = "<group>"; };
 		C2641B0026F623B40097103A /* CarsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsListPresenter.swift; sourceTree = "<group>"; };
+		C28E3E0C26F7400300B39C77 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		C28E3E0E26F7425300B39C77 /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		C2B0F8D026F6403D009453FD /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 		C2B0F8D326F6407C009453FD /* CarSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSearchService.swift; sourceTree = "<group>"; };
 		C2B0F8D626F6423E009453FD /* CarSearchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSearchModels.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 				8D320EF3263E631F00B0E0E9 /* Assets.xcassets */,
 				8D320EF5263E631F00B0E0E9 /* LaunchScreen.storyboard */,
 				8D320EF8263E631F00B0E0E9 /* Info.plist */,
+				C28E3E0C26F7400300B39C77 /* Localizable.strings */,
+				C28E3E0E26F7425300B39C77 /* Localizable.stringsdict */,
 			);
 			path = Cars;
 			sourceTree = "<group>";
@@ -322,7 +328,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2B0F8DE26F67DBB009453FD /* CarSearch.json in Resources */,
+				C28E3E0D26F7400300B39C77 /* Localizable.strings in Resources */,
 				8D320EF7263E631F00B0E0E9 /* LaunchScreen.storyboard in Resources */,
+				C28E3E0F26F7425300B39C77 /* Localizable.stringsdict in Resources */,
 				8D320EF4263E631F00B0E0E9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

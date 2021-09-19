@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Cars
+
+  Created by Joce on 19.09.2021.
+  
+*/
+
+"CAR_LIST_TITLE" = "Search result";
+"CAR_LIST_RATE" = "Rating: %@";
+"CAR_LIST_PRICE" = "price: $%@";
+"CAR_LIST_HORSEPOWERS" = "%@ h.p.";
+"CAR_LIST_ENGINEVOLUME" = "%@ L";
+"CAR_LIST_MILEAGE" = "%@ km.";
